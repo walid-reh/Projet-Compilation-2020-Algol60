@@ -1,0 +1,9 @@
+begin
+   integer x, y;
+  
+   outstring (1, "Compilers are fun\n");
+   x := 1102;
+
+
+end;
+

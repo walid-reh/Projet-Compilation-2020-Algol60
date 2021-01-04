@@ -1,0 +1,23 @@
+
+
+begin
+
+  procedure Absmax (a) TAILLE: (n, m) RESULTAT: (MAX) ELEMENTS: (i, k);
+
+  comment The absolute greatest element of the matrix a, of size n by m is transferred to MAX, and the subscripts of this element to i and k;
+
+  array a; integer i,k,n,m; real MAX;
+
+  begin 
+        integer p, q;
+        MAX := 0;
+        for p:=1 step 1 until n do for q:=1 step 1 until m do
+          if abs(a[p,q])>y then begin MAX:=abs(a[p,q]);
+                                     i:=p; k:=q 
+                                           end 
+
+     end 
+
+
+end
+

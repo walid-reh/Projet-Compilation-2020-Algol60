@@ -1,0 +1,7 @@
+begin
+comment test of arithmetic operations;
+	integer s;
+        s:= (13**2+16)*3/14+13*14-5;
+	outinteger (1,s)
+       
+end

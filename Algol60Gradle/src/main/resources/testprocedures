@@ -1,0 +1,17 @@
+begin
+
+	integer y;
+	real c;
+
+	real procedure poly2(a0,a1,a2,x); real a0,a1,a2; real x;
+	begin
+		poly2 := a0 + a1*x + a2*x*x+r  comment r n'est pas défini ;
+	end;
+
+	y := poly2(0,0,1.0, 2.0 , 13.14); comment la fonction requiert moins d'argument et certains paramètres ne respectent pas le type ;
+	c := poly2(13, 15.4,16);    comment la fonction requiert plus d'argument;
+	outreal(1, y);   comment  fonction de base définie  ;
+	outstring(1,"c"); comment  fonction non définie ;
+
+	z:= functionNotdefined(y)+gg
+end

@@ -1,0 +1,20 @@
+
+
+begin
+
+
+	own real r, rr, s;
+	integer n;
+	
+	ininteger (0,n);
+	rr := 1.0 / n;
+	
+	s := 0;
+	for r := 0 step rr until (1.0 - rr),rr while r<n**3 do 
+	begin
+		s := s + (1.0 / sqrt(1 - r*r)) * rr
+	end;
+	outreal (1,s); outstring (1,"\n")
+	
+end
+

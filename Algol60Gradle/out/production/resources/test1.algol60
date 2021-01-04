@@ -1,0 +1,14 @@
+begin
+    integer res;
+    integer procedure fact(a);integer a;
+    begin
+           res:=3
+    end;
+    res:=1;
+    res:=fact(99);
+    begin
+        integer y;
+        res:=2
+    end;
+    res:=9
+  end

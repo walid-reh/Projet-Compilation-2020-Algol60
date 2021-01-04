@@ -1,0 +1,60 @@
+begin
+comment swap procedure;
+	integer n, m;
+	switch S:=S1,S2,FORwhile,Q[m], if v>-5 then S3 else S4;
+	switch Q:=p1,w;
+	
+	procedure swap(a,b); integer a, b;
+	begin
+		integer c;
+		c := a;
+		a := b;
+		b := c
+	end;
+		
+	n := 2;  m := 3;
+	outinteger (1,n); outinteger (1,m); outstring (1,"\n");
+	swap(n, m);
+	outinteger (1,n); outinteger (1,m); outstring (1,"\n");
+	L:;
+	12:S:rr:l1:;
+	rr := 1.0 / n;
+	v:=123;
+	m:=1;
+	
+	
+	
+	goto S[2];
+
+    S1:
+		x:=1;
+
+    S2:	
+		y:=2;
+    if n < 0 then 
+	begin
+		if n>= -100	then m := -n else m := -100
+	end
+	else m := 0; 
+	goto S[3];
+	s := 0;
+	FORstep:
+	for r := 0 step rr until (1.0 - rr) do 
+	begin
+		s := s + (1.0 / sqrt(1 - r*r)) * rr
+	end;
+	Sigma:LR:12:
+		goto Beta;
+	Beta:
+		n := 2;  m := 3;
+	FORwhile:
+	mm:
+	for k:=1,V1*2 while V1<N do
+	begin
+		own integer nn;
+		outreal (1,nn);
+		nn := nn + 1
+	end
+	end
+
+

@@ -1,0 +1,15 @@
+begin
+comment while loop;
+	integer n;
+
+	n := 0;
+whileLabel:;
+		if n = 20 then goto finish;
+		n := n + 1;
+		outinteger(1, n);
+		goto whileLabel;
+finish:;
+	outstring(1,"FIN")
+
+end
+

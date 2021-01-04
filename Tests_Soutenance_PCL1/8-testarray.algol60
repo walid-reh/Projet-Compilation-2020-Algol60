@@ -1,0 +1,18 @@
+
+
+
+
+begin
+	comment a program that calculates the cube of array elements;
+	integer array arr[1:50];
+        
+	integer k;
+	for k := 1 step 1 until 50 do
+	begin
+		arr[i] := i**3
+	end;
+	
+        x:=4
+
+end
+

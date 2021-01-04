@@ -1,0 +1,113 @@
+f000  origine
+f086  debut d'execution
+6d4f   emplacement : 61440  (0xf000)  ligne n° 20	fact_ STW BP,-(SP) //save BP content in the stack LINKING
+6d9f   emplacement : 61442  (0xf002)  ligne n° 21	LDW BP, SP // update of current BP
+6c4f   emplacement : 61444  (0xf004)  ligne n° 22	STW SC,-(SP) //STATIC CHAIN
+61ed   emplacement : 61446  (0xf006)  ligne n° 25	LDW R1,(BP)4// CHARGING PARAM TO R1
+0004   emplacement : 61448  (0xf008) 
+6280   emplacement : 61450  (0xf00a)  ligne n° 26	LDW R2, #0
+0000   emplacement : 61452  (0xf00c) 
+4f21   emplacement : 61454  (0xf00e)  ligne n° 27	CMP R2, R1
+1204   emplacement : 61456  (0xf010)  ligne n° 28	BEQ 4
+2200   emplacement : 61458  (0xf012)  ligne n° 29	LDQ  0,R2
+1102   emplacement : 61460  (0xf014)  ligne n° 30	BMP 2
+2201   emplacement : 61462  (0xf016)  ligne n° 31	LDQ 1,R2
+624f   emplacement : 61464  (0xf018)  ligne n° 32	STW  R2 , -(SP)
+62bf   emplacement : 61466  (0xf01a)  ligne n° 33	LDW R2, (SP)+
+0c12   emplacement : 61468  (0xf01c)  ligne n° 34	TST R2
+0280   emplacement : 61470  (0xf01e)  ligne n° 35	JEQ #else_begin_if1739876329-$-2
+000a   emplacement : 61472  (0xf020) 
+6080   emplacement : 61474  (0xf022)  ligne n° 36	LDW FR, #1
+0001   emplacement : 61476  (0xf024) 
+0180   emplacement : 61478  (0xf026)  ligne n° 37	JMP  #end_cond_if_if1739876329-$-2
+0056   emplacement : 61480  (0xf028) 
+614f   emplacement : 61482  (0xf02a)  ligne n° 39	STW R1 ,-(SP) //saving registers
+624f   emplacement : 61484  (0xf02c)  ligne n° 40	STW R2 ,-(SP) //saving registers
+634f   emplacement : 61486  (0xf02e)  ligne n° 41	STW R3 ,-(SP) //saving registers
+644f   emplacement : 61488  (0xf030)  ligne n° 42	STW R4 ,-(SP) //saving registers
+654f   emplacement : 61490  (0xf032)  ligne n° 43	STW R5 ,-(SP) //saving registers
+664f   emplacement : 61492  (0xf034)  ligne n° 44	STW R6 ,-(SP) //saving registers
+674f   emplacement : 61494  (0xf036)  ligne n° 45	STW R7 ,-(SP) //saving registers
+684f   emplacement : 61496  (0xf038)  ligne n° 46	STW R8 ,-(SP) //saving registers
+694f   emplacement : 61498  (0xf03a)  ligne n° 47	STW R9 ,-(SP) //saving registers
+6a4f   emplacement : 61500  (0xf03c)  ligne n° 48	STW R10 ,-(SP) //saving registers
+6b4f   emplacement : 61502  (0xf03e)  ligne n° 49	STW R11 ,-(SP) //saving registers
+65ed   emplacement : 61504  (0xf040)  ligne n° 50	LDW R5,(BP)4// CHARGING PARAM TO R5
+0004   emplacement : 61506  (0xf042) 
+654f   emplacement : 61508  (0xf044)  ligne n° 51	STW R5,-(SP)
+6580   emplacement : 61510  (0xf046)  ligne n° 52	LDW R5, #1
+0001   emplacement : 61512  (0xf048) 
+62bf   emplacement : 61514  (0xf04a)  ligne n° 53	LDW R2,(SP)+
+f255   emplacement : 61516  (0xf04c)  ligne n° 54	SUB R2,R5,R5
+654f   emplacement : 61518  (0xf04e)  ligne n° 55	STW R5,-(SP) // pushing parameter 
+6c9d   emplacement : 61520  (0xf050)  ligne n° 57	LDW SC,BP //puting BP in SC
+3cfe   emplacement : 61522  (0xf052)  ligne n° 58	ADQ -2,SC //SC holds a Static Chain
+6cac   emplacement : 61524  (0xf054)  ligne n° 59	LDW SC,(SC) //SC LEAP
+0a50   emplacement : 61526  (0xf056)  ligne n° 60	JSR @fact_ // function call
+f000   emplacement : 61528  (0xf058) 
+3f02   emplacement : 61530  (0xf05a)  ligne n° 61	ADQ 2,SP //popping parameters
+6bbf   emplacement : 61532  (0xf05c)  ligne n° 62	LDW R11 ,(SP)+ //reloading registers
+6abf   emplacement : 61534  (0xf05e)  ligne n° 63	LDW R10 ,(SP)+ //reloading registers
+69bf   emplacement : 61536  (0xf060)  ligne n° 64	LDW R9 ,(SP)+ //reloading registers
+68bf   emplacement : 61538  (0xf062)  ligne n° 65	LDW R8 ,(SP)+ //reloading registers
+67bf   emplacement : 61540  (0xf064)  ligne n° 66	LDW R7 ,(SP)+ //reloading registers
+66bf   emplacement : 61542  (0xf066)  ligne n° 67	LDW R6 ,(SP)+ //reloading registers
+65bf   emplacement : 61544  (0xf068)  ligne n° 68	LDW R5 ,(SP)+ //reloading registers
+64bf   emplacement : 61546  (0xf06a)  ligne n° 69	LDW R4 ,(SP)+ //reloading registers
+63bf   emplacement : 61548  (0xf06c)  ligne n° 70	LDW R3 ,(SP)+ //reloading registers
+62bf   emplacement : 61550  (0xf06e)  ligne n° 71	LDW R2 ,(SP)+ //reloading registers
+61bf   emplacement : 61552  (0xf070)  ligne n° 72	LDW R1 ,(SP)+ //reloading registers
+6090   emplacement : 61554  (0xf072)  ligne n° 74	LDW FR, R0 // getting the result of fact's call
+604f   emplacement : 61556  (0xf074)  ligne n° 75	STW FR,-(SP)
+60ed   emplacement : 61558  (0xf076)  ligne n° 76	LDW FR,(BP)4// CHARGING PARAM TO FR
+0004   emplacement : 61560  (0xf078) 
+62bf   emplacement : 61562  (0xf07a)  ligne n° 77	LDW R2,(SP)+
+b200   emplacement : 61564  (0xf07c)  ligne n° 78	MUL R2,FR,FR
+6f9d   emplacement : 61566  (0xf07e)  ligne n° 80	LDW SP, BP //UNLINKING
+6daf   emplacement : 61568  (0xf080)  ligne n° 81	LDW BP, (SP)
+3f02   emplacement : 61570  (0xf082)  ligne n° 82	ADQ 2, SP
+0200   emplacement : 61572  (0xf084)  ligne n° 83	RTS // end of fact
+6f80   emplacement : 61574  (0xf086)  ligne n° 85	main_ LDW SP,#STACK_ADRS //initialising Stack Pointer
+1000   emplacement : 61576  (0xf088) 
+2d00   emplacement : 61578  (0xf08a)  ligne n° 86	LDQ NIL, BP //BP loaded with 0
+6d4f   emplacement : 61580  (0xf08c)  ligne n° 87	STW BP, -(SP) // Enqueue BP value
+6d9f   emplacement : 61582  (0xf08e)  ligne n° 88	LDW BP, SP //BP points at the same adresse as SP
+2700   emplacement : 61584  (0xf090)  ligne n° 89	LDQ NIL, R7
+614f   emplacement : 61586  (0xf092)  ligne n° 90	STW R1, -(SP)
+3ffe   emplacement : 61588  (0xf094)  ligne n° 91	ADQ -2,SP
+6180   emplacement : 61590  (0xf096)  ligne n° 92	LDW R1, #6
+0006   emplacement : 61592  (0xf098) 
+616d   emplacement : 61594  (0xf09a)  ligne n° 93	STW R1, (BP)-4
+fffc   emplacement : 61596  (0xf09c) 
+614f   emplacement : 61598  (0xf09e)  ligne n° 94	STW R1 ,-(SP) //saving registers
+624f   emplacement : 61600  (0xf0a0)  ligne n° 95	STW R2 ,-(SP) //saving registers
+634f   emplacement : 61602  (0xf0a2)  ligne n° 96	STW R3 ,-(SP) //saving registers
+644f   emplacement : 61604  (0xf0a4)  ligne n° 97	STW R4 ,-(SP) //saving registers
+654f   emplacement : 61606  (0xf0a6)  ligne n° 98	STW R5 ,-(SP) //saving registers
+664f   emplacement : 61608  (0xf0a8)  ligne n° 99	STW R6 ,-(SP) //saving registers
+674f   emplacement : 61610  (0xf0aa)  ligne n° 100	STW R7 ,-(SP) //saving registers
+684f   emplacement : 61612  (0xf0ac)  ligne n° 101	STW R8 ,-(SP) //saving registers
+694f   emplacement : 61614  (0xf0ae)  ligne n° 102	STW R9 ,-(SP) //saving registers
+6a4f   emplacement : 61616  (0xf0b0)  ligne n° 103	STW R10 ,-(SP) //saving registers
+6b4f   emplacement : 61618  (0xf0b2)  ligne n° 104	STW R11 ,-(SP) //saving registers
+6580   emplacement : 61620  (0xf0b4)  ligne n° 105	LDW R5, #4
+0004   emplacement : 61622  (0xf0b6) 
+654f   emplacement : 61624  (0xf0b8)  ligne n° 106	STW R5,-(SP) // pushing parameter 
+6c9d   emplacement : 61626  (0xf0ba)  ligne n° 108	LDW SC,BP //puting BP in SC
+0a50   emplacement : 61628  (0xf0bc)  ligne n° 109	JSR @fact_ // function call
+f000   emplacement : 61630  (0xf0be) 
+3f02   emplacement : 61632  (0xf0c0)  ligne n° 110	ADQ 2,SP //popping parameters
+6bbf   emplacement : 61634  (0xf0c2)  ligne n° 111	LDW R11 ,(SP)+ //reloading registers
+6abf   emplacement : 61636  (0xf0c4)  ligne n° 112	LDW R10 ,(SP)+ //reloading registers
+69bf   emplacement : 61638  (0xf0c6)  ligne n° 113	LDW R9 ,(SP)+ //reloading registers
+68bf   emplacement : 61640  (0xf0c8)  ligne n° 114	LDW R8 ,(SP)+ //reloading registers
+67bf   emplacement : 61642  (0xf0ca)  ligne n° 115	LDW R7 ,(SP)+ //reloading registers
+66bf   emplacement : 61644  (0xf0cc)  ligne n° 116	LDW R6 ,(SP)+ //reloading registers
+65bf   emplacement : 61646  (0xf0ce)  ligne n° 117	LDW R5 ,(SP)+ //reloading registers
+64bf   emplacement : 61648  (0xf0d0)  ligne n° 118	LDW R4 ,(SP)+ //reloading registers
+63bf   emplacement : 61650  (0xf0d2)  ligne n° 119	LDW R3 ,(SP)+ //reloading registers
+62bf   emplacement : 61652  (0xf0d4)  ligne n° 120	LDW R2 ,(SP)+ //reloading registers
+61bf   emplacement : 61654  (0xf0d6)  ligne n° 121	LDW R1 ,(SP)+ //reloading registers
+6190   emplacement : 61656  (0xf0d8)  ligne n° 123	LDW R1, R0 // getting the result of fact's call
+616d   emplacement : 61658  (0xf0da)  ligne n° 124	STW R1, (BP)-4
+fffc   emplacement : 61660  (0xf0dc) 

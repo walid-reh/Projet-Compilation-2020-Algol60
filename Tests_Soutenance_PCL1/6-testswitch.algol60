@@ -1,0 +1,41 @@
+
+
+begin
+   comment the use of switch and labels ;
+   
+   integer n;
+   
+   switch S := S1, S2, S3, S4, S5 ,S6 ,S7;
+
+
+
+   if n > 7 then goto ENDLABEL;
+
+   goto S[n];
+   
+   S1: 
+          outstring(1,"Lundi"); goto ENDLABEL;
+    
+   S2: begin
+          outstring(1,"Mardi"); goto ENDLABEL
+       end;
+   S3: begin
+          outstring(1,"Mercredi"); goto ENDLABEL
+       end;
+   S4: begin
+          outstring(1,"Jeudi"); goto ENDLABEL
+       end;
+   S5: begin
+          outstring(1,"Vendredi"); goto ENDLABEL
+       end;
+   S6: begin
+          outstring(1,"Samedi"); goto ENDLABEL
+       end;
+   S7: begin
+          outstring(1,"Dimanche"); goto ENDLABEL
+       end;
+
+ENDLABEL:
+
+
+end

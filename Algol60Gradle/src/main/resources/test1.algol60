@@ -1,0 +1,14 @@
+begin
+    integer res;
+    integer y;
+    integer procedure fact(a);integer a;
+    begin
+           res:=3;
+           begin
+           y:=2
+           end
+    end;
+    res:=-(2+8);
+    outinteger(1,res)
+
+  end

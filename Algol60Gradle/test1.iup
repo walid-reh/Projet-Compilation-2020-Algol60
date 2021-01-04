@@ -1,0 +1,155 @@
+f000  origine
+f0f8  debut d'execution
+2100   emplacement : 61440  (0xf000)  ligne n° 21	LDQ 0, R1
+6d4f   emplacement : 61442  (0xf002)  ligne n° 22	STW BP, -(SP)
+6d9f   emplacement : 61444  (0xf004)  ligne n° 23	LDW BP, SP
+ff1f   emplacement : 61446  (0xf006)  ligne n° 24	SUB SP, R1, SP
+60ed   emplacement : 61448  (0xf008)  ligne n° 25	LDW R0, (BP)4
+0004   emplacement : 61450  (0xf00a) 
+0b00   emplacement : 61452  (0xf00c)  ligne n° 26	TRP #WRITE_EXC
+0042   emplacement : 61454  (0xf00e) 
+6f9d   emplacement : 61456  (0xf010)  ligne n° 27	LDW SP, BP
+6dbf   emplacement : 61458  (0xf012)  ligne n° 28	LDW BP, (SP)+
+0200   emplacement : 61460  (0xf014)  ligne n° 29	RTS 
+6d4f   emplacement : 61462  (0xf016)  ligne n° 31	STW BP, -(SP)
+6d9f   emplacement : 61464  (0xf018)  ligne n° 32	LDW BP, SP
+4eff   emplacement : 61466  (0xf01a)  ligne n° 33	ADI SP, SP, #-8
+fff8   emplacement : 61468  (0xf01c) 
+4eff   emplacement : 61470  (0xf01e)  ligne n° 34	ADI SP, SP, #-2
+fffe   emplacement : 61472  (0xf020) 
+60ed   emplacement : 61474  (0xf022)  ligne n° 35	LDW R0, (BP)4
+0004   emplacement : 61476  (0xf024) 
+606d   emplacement : 61478  (0xf026)  ligne n° 36	STW R0, (BP)-10
+fff6   emplacement : 61480  (0xf028) 
+6080   emplacement : 61482  (0xf02a)  ligne n° 37	LDW R0, #10
+000a   emplacement : 61484  (0xf02c) 
+604f   emplacement : 61486  (0xf02e)  ligne n° 38	STW R0, -(SP)
+4ed0   emplacement : 61488  (0xf030)  ligne n° 39	ADI BP, R0, #-8
+fff8   emplacement : 61490  (0xf032) 
+604f   emplacement : 61492  (0xf034)  ligne n° 40	STW R0, -(SP)
+60ed   emplacement : 61494  (0xf036)  ligne n° 41	LDW R0, (BP)-10
+fff6   emplacement : 61496  (0xf038) 
+604f   emplacement : 61498  (0xf03a)  ligne n° 42	STW R0, -(SP)
+0a50   emplacement : 61500  (0xf03c)  ligne n° 43	JSR @itoa_
+f058   emplacement : 61502  (0xf03e) 
+4eff   emplacement : 61504  (0xf040)  ligne n° 44	ADI SP, SP, #6
+0006   emplacement : 61506  (0xf042) 
+4ed0   emplacement : 61508  (0xf044)  ligne n° 45	ADI BP, R0, #-8
+fff8   emplacement : 61510  (0xf046) 
+604f   emplacement : 61512  (0xf048)  ligne n° 46	STW R0, -(SP)
+0a50   emplacement : 61514  (0xf04a)  ligne n° 47	JSR @print_
+f000   emplacement : 61516  (0xf04c) 
+4eff   emplacement : 61518  (0xf04e)  ligne n° 48	ADI SP, SP, #2
+0002   emplacement : 61520  (0xf050) 
+6f9d   emplacement : 61522  (0xf052)  ligne n° 49	LDW SP, BP
+6dbf   emplacement : 61524  (0xf054)  ligne n° 50	LDW BP, (SP)+
+0200   emplacement : 61526  (0xf056)  ligne n° 51	RTS
+6d4f   emplacement : 61528  (0xf058)  ligne n° 61	stw BP, -(SP)
+6d9f   emplacement : 61530  (0xf05a)  ligne n° 62	ldw BP, SP
+60ed   emplacement : 61532  (0xf05c)  ligne n° 64	ldw r0, (BP)ITOA_I    // r0 = i    
+0004   emplacement : 61534  (0xf05e) 
+61ed   emplacement : 61536  (0xf060)  ligne n° 65	ldw r1, (BP)ITOA_B    // r1 = b
+0008   emplacement : 61538  (0xf062) 
+2320   emplacement : 61540  (0xf064)  ligne n° 69	ldq ASCII_SP, r3      // code ASCII de eSPace (SPace) -> r3
+2e0a   emplacement : 61542  (0xf066)  ligne n° 70	ldq 10, WR            // 10 -> WR
+4f1e   emplacement : 61544  (0xf068)  ligne n° 71	cmp r1, WR            // charge les indicateurs de b - 10
+130c   emplacement : 61546  (0xf06a)  ligne n° 72	bne NOSIGN-$-2        // si non igal (donc si b != 10) saute en NOSIGN, sinon calcule signe
+232b   emplacement : 61548  (0xf06c)  ligne n° 73	ldq ASCII_PLUS, r3    // charge le code ASCII du signe plus + dans r3
+0c10   emplacement : 61550  (0xf06e)  ligne n° 74	tst r0                // charge les indicateurs de r0 et donc de i
+1404   emplacement : 61552  (0xf070)  ligne n° 75	bge POSIT-$-2         // saute en POSIT si i >= 0
+4700   emplacement : 61554  (0xf072)  ligne n° 76	neg r0, r0            // change le signe de r0
+232d   emplacement : 61556  (0xf074)  ligne n° 77	ldq ASCII_MINUS, r3   // charge le code ASCII du signe moins - dans r3
+0000   emplacement : 61558  (0xf076)  ligne n° 78	POSIT   NOP                   // r3 = code ASCII de signe: SP pour aucun, - ou +
+6290   emplacement : 61560  (0xf078)  ligne n° 81	NOSIGN  ldw r2, r0            // r2 <- r0
+6092   emplacement : 61562  (0xf07a)  ligne n° 82	CNVLOOP ldw r0, r2            // r0 <- r2
+4211   emplacement : 61564  (0xf07c)  ligne n° 86	srl r1, r1            // r1 = b/2
+4c04   emplacement : 61566  (0xf07e)  ligne n° 87	ani r0, r4, #1        // ANd Immidiate entre r0 et 00...01 vers r4:
+0001   emplacement : 61568  (0xf080) 
+4200   emplacement : 61570  (0xf082)  ligne n° 89	srl r0, r0            // r0 / 2 -> r0
+a012   emplacement : 61572  (0xf084)  ligne n° 90	div r0, r1, r2        // quotient = r0 / r1 -> r2, reste' = r0 % r1 -> r0
+4600   emplacement : 61574  (0xf086)  ligne n° 91	shl r0, r0            // r0 = 2 * reste'
+e040   emplacement : 61576  (0xf088)  ligne n° 92	add r0, r4, r0        // r0 = reste = 2 * reste' + reste" => r0 = chiffre
+4611   emplacement : 61578  (0xf08a)  ligne n° 93	shl r1, r1            // r1 = b
+30f6   emplacement : 61580  (0xf08c)  ligne n° 95	adq -10, r0           // chiffre - 10 -> r0 
+1404   emplacement : 61582  (0xf08e)  ligne n° 96	bge LETTER-$-2        // saute en LETTER si chiffre >= 10
+303a   emplacement : 61584  (0xf090)  ligne n° 97	adq 10+ASCII_0, r0    // ajoute 10 => r0 = chiffre, ajoute code ASCII de 0 
+1102   emplacement : 61586  (0xf092)  ligne n° 99	bmp STKCHR-$-2        // saute en STKCHR 
+3041   emplacement : 61588  (0xf094)  ligne n° 100	LETTER  adq ASCII_A, r0       // r0 = ASCII(A) pour chiffre = 10, ASCII(B) pour 11 ...
+604f   emplacement : 61590  (0xf096)  ligne n° 102	STKCHR  stw r0, -(SP)         // empile code ASCII du chiffre 
+0c12   emplacement : 61592  (0xf098)  ligne n° 104	tst r2                // charge les indicateurs en fonction du quotient ds r2)
+13de   emplacement : 61594  (0xf09a)  ligne n° 105	bne CNVLOOP-$-2       // boucle si quotient non nul; sinon sort
+61ed   emplacement : 61596  (0xf09c)  ligne n° 108	ldw r1, (BP)ITOA_P    // r1 pointe sur le dibut du tampon dij` alloui 
+0006   emplacement : 61598  (0xf09e) 
+5331   emplacement : 61600  (0xf0a0)  ligne n° 109	stb r3, (r1)+         // copie le signe dans le tampon
+60bf   emplacement : 61602  (0xf0a2)  ligne n° 110	CPYLOOP ldw r0, (SP)+         // dipile code du chiffre gauche (sur un mot) dans r0
+5031   emplacement : 61604  (0xf0a4)  ligne n° 111	stb r0, (r1)+         // copie code du chiffre dans un Byte du tampon de gauche ` droite
+4ffd   emplacement : 61606  (0xf0a6)  ligne n° 112	cmp SP, BP            // compare SP et sa valeur avant empilement des caracthres qui itait BP
+13f8   emplacement : 61608  (0xf0a8)  ligne n° 113	bne CPYLOOP-$-2       // boucle s'il reste au moins un chiffre sur la pile
+200a   emplacement : 61610  (0xf0aa)  ligne n° 114	ldq 10, r0
+5031   emplacement : 61612  (0xf0ac)  ligne n° 115	stb r0, (r1)+
+2000   emplacement : 61614  (0xf0ae)  ligne n° 116	ldq NUL, r0           // charge le code du caracthre NUL dans r0
+5031   emplacement : 61616  (0xf0b0)  ligne n° 117	stb r0, (r1)+         // sauve code NUL pour terminer la channe de caracthres
+60ed   emplacement : 61618  (0xf0b2)  ligne n° 119	ldw r0, (BP)ITOA_P    // retourne le pointeur sur la channe de caracthres
+0006   emplacement : 61620  (0xf0b4) 
+6f9d   emplacement : 61622  (0xf0b6)  ligne n° 121	ldw SP, BP            // SP <- BP : abandonne infos locales; SP pointe sur ancinne valeur de BP
+6dbf   emplacement : 61624  (0xf0b8)  ligne n° 122	ldw BP, (SP)+         // dipile ancienne valeur de BP dans BP; SP pointe sur adresse de retour
+0200   emplacement : 61626  (0xf0ba)  ligne n° 123	RTS                   // retourne au programme appelant
+6d4f   emplacement : 61628  (0xf0bc)  ligne n° 124	fact_ STW BP,-(SP) //save BP content in the stack LINKING
+6d9f   emplacement : 61630  (0xf0be)  ligne n° 125	LDW BP, SP // update of current BP
+6c4f   emplacement : 61632  (0xf0c0)  ligne n° 126	STW SC,-(SP) //STATIC CHAIN
+6180   emplacement : 61634  (0xf0c2)  ligne n° 129	LDW R1, #3
+0003   emplacement : 61636  (0xf0c4) 
+629d   emplacement : 61638  (0xf0c6)  ligne n° 130	LDW R2,BP
+32fe   emplacement : 61640  (0xf0c8)  ligne n° 131	ADQ -2,R2 //R2 holds a Static Chain
+62a2   emplacement : 61642  (0xf0ca)  ligne n° 132	LDW R2,(R2) //LEAP to change environment
+6162   emplacement : 61644  (0xf0cc)  ligne n° 133	STW R1,(R2)-4// Found variable... Storing it
+fffc   emplacement : 61646  (0xf0ce) 
+6d4f   emplacement : 61648  (0xf0d0)  ligne n° 134	STW BP,-(SP) //save BP content in the stack LINKING
+689d   emplacement : 61650  (0xf0d2)  ligne n° 135	LDW R8,BP // saves BP for SC
+6d9f   emplacement : 61652  (0xf0d4)  ligne n° 136	LDW BP, SP // update of current BP
+684f   emplacement : 61654  (0xf0d6)  ligne n° 137	STW R8,-(SP)// STATIC CHAIN
+6180   emplacement : 61656  (0xf0d8)  ligne n° 140	LDW R1, #2
+0002   emplacement : 61658  (0xf0da) 
+629d   emplacement : 61660  (0xf0dc)  ligne n° 141	LDW R2,BP
+32fe   emplacement : 61662  (0xf0de)  ligne n° 142	ADQ -2,R2 //R2 holds a Static Chain
+62a2   emplacement : 61664  (0xf0e0)  ligne n° 143	LDW R2,(R2) //LEAP to change environment
+32fe   emplacement : 61666  (0xf0e2)  ligne n° 144	ADQ -2,R2 //R2 holds a Static Chain
+62a2   emplacement : 61668  (0xf0e4)  ligne n° 145	LDW R2,(R2) //LEAP to change environment
+6162   emplacement : 61670  (0xf0e6)  ligne n° 146	STW R1,(R2)-6// Found variable... Storing it
+fffa   emplacement : 61672  (0xf0e8) 
+6f9d   emplacement : 61674  (0xf0ea)  ligne n° 147	LDW SP, BP //UNLINKING
+6daf   emplacement : 61676  (0xf0ec)  ligne n° 148	LDW BP, (SP)
+3f02   emplacement : 61678  (0xf0ee)  ligne n° 149	ADQ 2, SP
+6f9d   emplacement : 61680  (0xf0f0)  ligne n° 150	LDW SP, BP //UNLINKING
+6daf   emplacement : 61682  (0xf0f2)  ligne n° 151	LDW BP, (SP)
+3f02   emplacement : 61684  (0xf0f4)  ligne n° 152	ADQ 2, SP
+0200   emplacement : 61686  (0xf0f6)  ligne n° 153	RTS // end of fact
+6f80   emplacement : 61688  (0xf0f8)  ligne n° 155	main_ LDW SP,#STACK_ADRS //initialising Stack Pointer
+1000   emplacement : 61690  (0xf0fa) 
+2d00   emplacement : 61692  (0xf0fc)  ligne n° 156	LDQ NIL, BP //BP loaded with 0
+6d4f   emplacement : 61694  (0xf0fe)  ligne n° 157	STW BP, -(SP) // Enqueue BP value
+6d9f   emplacement : 61696  (0xf100)  ligne n° 158	LDW BP, SP //BP points at the same adresse as SP
+2700   emplacement : 61698  (0xf102)  ligne n° 159	LDQ NIL, R7
+614f   emplacement : 61700  (0xf104)  ligne n° 160	STW R1, -(SP)
+3ffc   emplacement : 61702  (0xf106)  ligne n° 161	ADQ -4,SP
+6180   emplacement : 61704  (0xf108)  ligne n° 163	LDW R1, #2
+0002   emplacement : 61706  (0xf10a) 
+614f   emplacement : 61708  (0xf10c)  ligne n° 164	STW R1,-(SP)
+6180   emplacement : 61710  (0xf10e)  ligne n° 165	LDW R1, #8
+0008   emplacement : 61712  (0xf110) 
+62bf   emplacement : 61714  (0xf112)  ligne n° 166	LDW R2,(SP)+
+e211   emplacement : 61716  (0xf114)  ligne n° 167	ADD R2,R1,R1
+4711   emplacement : 61718  (0xf116)  ligne n° 168	NEG R1,R1
+616d   emplacement : 61720  (0xf118)  ligne n° 169	STW R1, (BP)-4
+fffc   emplacement : 61722  (0xf11a) 
+61ed   emplacement : 61724  (0xf11c)  ligne n° 171	LDW R1,(BP)-4 // CHARGING VARIABLE TO R1
+fffc   emplacement : 61726  (0xf11e) 
+614f   emplacement : 61728  (0xf120)  ligne n° 172	STW R1, -(SP)
+0a50   emplacement : 61730  (0xf122)  ligne n° 173	JSR @printi_
+f016   emplacement : 61732  (0xf124) 
+4eff   emplacement : 61734  (0xf126)  ligne n° 174	ADI SP, SP, #2
+0002   emplacement : 61736  (0xf128) 
+0b00   emplacement : 61738  (0xf12a)  ligne n° 175	TRP #EXIT_EXC
+0040   emplacement : 61740  (0xf12c) 
+0950   emplacement : 61742  (0xf12e)  ligne n° 176	JEA @main_
+f0f8   emplacement : 61744  (0xf130) 
